@@ -1,4 +1,5 @@
 #!/bin/bash
 
 set -e  # stop on errors
+ldconfig
 R --no-save < install.R
