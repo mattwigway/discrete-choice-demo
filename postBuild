@@ -1,5 +1,4 @@
 #!/bin/bash
 
 set -e  # stop on errors
-ldconfig
-R --no-save < install.R
+LD_LIBRARY_PATH=/srv/conda/envs/notebook/lib:$LD_LIBRARY_PATH R --no-save < install.R

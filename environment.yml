@@ -3,12 +3,12 @@ channels:
 dependencies:
   - r-base>=4
   - r-irkernel>=1.1
-  - clang
+  - gxx_linux-64
   - openmp
-  - llvm-openmp
   - libgomp
   - r-mvtnorm
   - r-quantreg
+  - r-renv
   - r-mcmcpack
   - r-mnormt
   - r-randtoolbox
