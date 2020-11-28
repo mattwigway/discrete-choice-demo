@@ -14,11 +14,11 @@ COPY . ${HOME}
 ## COPY binder ${HOME}
 RUN chown -R ${NB_USER} ${HOME}
 
-## Become normal user again
-USER ${NB_USER}
-
 RUN /rocker_scripts/install_python.sh
 RUN /rocker_scripts/install_binder.sh
+
+## Become normal user again
+USER ${NB_USER}
 
 ## Run an install.R script, if it exists.
 RUN if [ -f install.R ]; then R --quiet -f install.R; fi
