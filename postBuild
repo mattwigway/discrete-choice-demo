@@ -1,4 +1,6 @@
 #!/bin/bash
 
 set -e  # stop on errors
+# work around libgomp issue
+ln -s /srv/conda/envs/notebook/lib/libgomp.so.1 /srv/conda/envs/notebook/lib/libgomp.so
 LD_LIBRARY_PATH=/srv/conda/envs/notebook/lib:$LD_LIBRARY_PATH R --no-save < install.R

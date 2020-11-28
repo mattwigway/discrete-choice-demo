@@ -8,7 +8,8 @@ dependencies:
   - libgomp
   - r-mvtnorm
   - r-quantreg
-  - r-renv
+  - r-zoo
+  - r-sandwich
   - r-mcmcpack
   - r-mnormt
   - r-randtoolbox
