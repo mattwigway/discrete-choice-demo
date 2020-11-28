@@ -1,3 +1,4 @@
 #!/bin/bash
 
+set -e  # stop on errors
 R --no-save < install.R
