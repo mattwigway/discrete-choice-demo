@@ -6,3 +6,10 @@ dependencies:
   - gxx_linux-64
   - openmp
   - libgomp
+  - r-mvtnorm
+  - r-quantreg
+  - r-mcmcpack
+  - r-mnormt
+  - r-randtoolbox
+  - r-rcpparmadillo
+  - r-rcppeigen
