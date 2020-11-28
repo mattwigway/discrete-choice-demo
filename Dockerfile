@@ -1,9 +1,8 @@
 ## Use a tag instead of "latest" for reproducibility
-FROM rocker/binder:4.0.3
+FROM rocker/rstudio:4.0.3
 
-## Declares build arguments
-ARG NB_USER
-ARG NB_UID
+ENV NB_USER=rstudio
+ENV NB_UID=1000
 
 ## Copies your repo files into the Docker Container
 USER root
@@ -18,5 +17,14 @@ RUN chown -R ${NB_USER} ${HOME}
 ## Become normal user again
 USER ${NB_USER}
 
+RUN /rocker_scripts/install_python.sh
+RUN /rocker_scripts/install_binder.sh
+
 ## Run an install.R script, if it exists.
 RUN if [ -f install.R ]; then R --quiet -f install.R; fi
+
+CMD jupyter notebook --ip 0.0.0.0
+
+USER ${NB_USER}
+
+WORKDIR /home/${NB_USER}
