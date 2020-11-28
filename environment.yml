@@ -3,3 +3,4 @@ channels:
 dependencies:
   - r-base>=4
   - r-irkernel>=1.1
+  - gxx_linux-64
