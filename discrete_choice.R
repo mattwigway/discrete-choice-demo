@@ -7,13 +7,12 @@
 # load Apollo choice modeling package
 library(apollo)
 
-# Before running this line, in RStudio, choose Session -> Set working directory -> To source file location
 # This data is from the Biogeme examples, http://biogeme.epfl.ch/data.html
 # note that Apollo requires that this variable be called 'database'
 database <- read.csv('optima.dat', sep='\t')
 
 # naive computation of estimated walking time based on distance
-database$TimeWalk <- database$distance_km / 2.5 * 60  # 2.5 km/h, 60 mins in an hour
+database$TimeWalk <- database$distance_km / 4 * 60  # 4 km/h, 60 mins in an hour
 
 # listwise deletion of people with missing incomes
 database <- subset(database, Income >= 0 & Choice >= 0)
