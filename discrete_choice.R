@@ -14,7 +14,7 @@ database <- read.csv('optima.dat', sep='\t')
 # naive computation of estimated walking time based on distance
 database$TimeWalk <- database$distance_km / 4 * 60  # 4 km/h, 60 mins in an hour
 
-# listwise deletion of people with missing incomes
+# listwise deletion of records with missing incomes/modes
 database <- subset(database, Income >= 0 & Choice >= 0)
 
 # Initialize the Apollo choice modeling package
