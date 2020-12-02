@@ -82,7 +82,7 @@ apollo_probabilities <- function (apollo_beta, apollo_inputs, functionality='est
     model = apollo_mnl(mnl_settings, functionality)
   )
   
-  # multiply probabilities across decisionmakers (re-weight so model is at person level rather than tour level)
+  # multiply probabilities across decisionmakers
   probs <- apollo_panelProd(probs, apollo_inputs, functionality)
   
   # finalize model
